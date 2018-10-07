@@ -7,14 +7,16 @@
             <tr>
               <th scope="col">First name</th>
               <th scope="col">Last name</th>
-              <th scope="col">Msg</th>                   
+              <th scope="col">Number</th>                   
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Rahul</td>
-              <td>Kumar</td>
-              <td>Hello hi</td>                    
+            <tr *ngFor ="let item of data">
+              <ng-container *ngIf="item.isMessageSend">
+              <td>{{item.FirstName}}</td>
+              <td>{{item.LastName}}</td>
+              <td>{{item.Number}}</td>        
+            </ng-container>            
             </tr>
           </tbody>
         </table>

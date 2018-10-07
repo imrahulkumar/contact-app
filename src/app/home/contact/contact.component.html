@@ -13,15 +13,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Rahul</td>
-            <td>Kumar</td>
-            <td>7982813451</td>
+          <tr *ngFor ="let item of data">
+            <td>{{item.FirstName}}</td>
+            <td>{{item.LastName}}</td>
+            <td>{{item.Number}}</td>
             <td>            
-                    <i class="fa fa-paper-plane cursor" aria-hidden="true" (click)="sendMessage()"></i>              
+              <i class="fa fa-paper-plane cursor" aria-hidden="true" (click)="sendMessage(item)"></i>              
               </td>    
               <td>
-                  <i class="fa fa-info" aria-hidden="true" ></i>
+                  <i class="fa fa-info" aria-hidden="true" (click)="detail(item)"></i>
               </td>        
           </tr>
         </tbody>
@@ -30,3 +30,91 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+<div class="modal fade" id="msg" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <label for="msg" class="col-form-label">Message:</label>
+        <input type="text" class="form-control" id="msg" [(ngModel)]="text">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" (click)="sendMessageConfirm()" class="btn btn-primary">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="modal fade" id="detail" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Contact Detail</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- xxxxxx -->
+          <form>
+              <div class="form-group row">
+                <label  class="col-sm-2 col-form-label">First Name</label>
+                <div class="col-sm-10">
+                  <input type="text" disabled [value]="first" class="form-control"  placeholder="First Name">
+                </div>
+              </div>
+              <div class="form-group row">
+                  <label  class="col-sm-2 col-form-label">Last Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" disabled [value]="last" class="form-control"  placeholder="Last Name">
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Number</label>
+                    <div class="col-sm-10">
+                      <input type="text" disabled [value]="num" class="form-control"  placeholder="9999999999999">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label  class="col-sm-2 col-form-label">Address</label>
+                      <div class="col-sm-10">
+                        <input type="text" disabled [value]="add" class="form-control"  placeholder="Address">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                        <label  class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                          <input type="text" disabled [value]="emailAdd" class="form-control"  placeholder="abc@gmnail.com">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                          <label  class="col-sm-2 col-form-label">DOB</label>
+                          <div class="col-sm-10">
+                            <input type="text" disabled [value]="date" class="form-control"  placeholder="13-4-1999">
+                          </div>
+                        </div>
+              </form>
+          <!-- xxxxxx -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

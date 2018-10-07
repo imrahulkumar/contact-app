@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SendMessageComponent implements OnInit {
 
+  data:any=[];
   constructor() { }
 
   ngOnInit() {
+    this.data = JSON.parse((localStorage.getItem("data")));
   }
 
 }

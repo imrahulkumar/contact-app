@@ -6,11 +6,9 @@ const nexmo = new Nexmo({
 });
 
 
-function sendmsg () {
+function sendmsg (to , text) {
     const from = 'Nexmo';
-    const to = '7982813451';
-    const text = 'A text message sent using the Nexmo SMS API';
-    
+    console.log(`your number is ${to} and your message is ${text}`);
     nexmo.message.sendSms(from, to, text, (error, response) => {
       if(error) {
         throw error;
