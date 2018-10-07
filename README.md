@@ -1,10 +1,10 @@
-# Blood Donation Camp
+# Contact-app
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
 ## Project is Hosted at: heroku
 
-Link.: https://blood-bank-camp.herokuapp.com/
+Link.: 
 
 ## Development server
 
