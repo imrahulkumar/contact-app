@@ -14,6 +14,7 @@ import {
 import { IAppState, rootReducer ,INITIAL_STATE} from "./store";
 import { ContactComponent } from './home/contact/contact.component';
 import { SendMessageComponent } from './home/send-message/send-message.component';
+import {Nexmo}  from "nexmo";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { SendMessageComponent } from './home/send-message/send-message.component
     AppRoutingModule,
     NgReduxModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
  
   ],
   providers: [DataServiceService],

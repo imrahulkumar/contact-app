@@ -8,7 +8,7 @@ export const INITIAL_STATE :IAppState = {
 
 export function rootReducer(state:IAppState,action):IAppState
 {
-    debugger
+    
    switch(action.type)
    {
      case 'ON': return {         
